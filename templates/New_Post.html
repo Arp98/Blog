@@ -1,0 +1,40 @@
+{% extends 'Base.html' %}
+
+
+{% block content %}
+<center>
+    <div style="width: 80%;float: left;height: 80px;text-align: center;">
+        <span>
+            <h1>New Post</h1>
+        </span>
+    </div>
+    <div style="width: 20%;float: right;height: 80px;">
+        <form method="POST" action="Logout">
+            {% csrf_token %}
+            <span>
+                <input class="button" type="submit" value="Logout">
+            </span>
+        </form>
+    </div>
+
+    <form method="POST" action="NewPost">
+        {% csrf_token %}
+        <i>Enter the Post Name:</i><br>
+        <input type="text" size="50" name="Post_name" required><br><br>
+
+        <i>Enter the Post Tag:</i><br>
+        <input type="text" size="50" name="Post_Tags" required><br><br>
+
+        <i>Enter the Post Content:</i><br>
+        <textarea name="Post_Content" rows="10" cols="52" required></textarea><br><br>
+        {% for message in messages %}
+            <h3 style="color: orangered">{{ message }}</h3>
+        {% endfor %}
+
+        <input class="btn login_btn" type="submit" value="Post">
+        <input class="btn reset_btn" type="reset" value="Reset">
+    </form>
+
+</center>
+{% endblock %}
+

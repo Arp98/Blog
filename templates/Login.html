@@ -1,0 +1,40 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+<center>
+
+
+    <h1> Login</h1>
+    <form method="POST" action="Login">
+        {% csrf_token %}
+        <table style="text-align: center">
+            <tbody>
+                <tr>
+                    <td>
+                        User Name:
+                    </td>
+                    <td>
+                        <input type="text" name="username", placeholder="username" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Password:
+                    </td>
+                    <td>
+                        <input type="password" name="password", placeholder="Password" required>
+                    </td>
+                </tr>
+            </tbody>
+        </table><br>
+        <input class="btn login_btn" type="submit" value="Login">
+        <input class="btn reset_btn" type="reset" value="Reset">
+    </form><br>
+    {% for message in messages %}
+        <h3 style="color: orangered">{{ message }}</h3>
+    {% endfor %}
+    <br>
+    Don't have an account? <a href="{% url 'Sign Up' %}" class="ml-2" style="color: Red">Sign Up</a>
+</center>
+
+{% endblock %}

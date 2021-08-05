@@ -1,0 +1,37 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+<center>
+
+    <h1>Blogs</h1>
+    {% for post in posts %}
+        <table>
+            <tbody>
+                <tr>
+                    <td style="font-size: x-large;width: 80%">
+                        <b>{{ post.Post_User }}</b>
+                    </td>
+                    <td style="font-size: 15px;color: gray">
+                        {{ post.Post_Timestamps }}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="max-width: 40px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;
+                    font-family: 'Helvetica Neue', 'Helvetica, Arial', sans-serif;font-size: large; width: 80%">
+                        {{ post.Post_name }}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="max-width: 40px;text-overflow: clip;overflow: visible;
+                    font-size: medium;font-family: 'Calibri Light';width: 80%">
+                        {{ post.Post_Contents }}
+                    </td>
+                </tr>
+            </tbody>
+        </table><br>
+
+
+    {% endfor %}
+
+</center>
+{% endblock %}
