@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-tifaj&!#35sw(zf(3-imwn%30q6^%be^(h4iuhlo448=1i*9!_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['blog-namo.herokuapp.com']
 
 # Application definition
 
